@@ -1,0 +1,293 @@
+/* To-Do List — Desafio 03 (Visual Limpo e 100% Responsivo) */
+
+.todo-page-container {
+  max-width: 640px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.todo-card-wrapper {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Card de Progresso */
+.todo-progress-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.progress-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.progress-label {
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.progress-stats-count {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: #fff;
+}
+
+.progress-stats-count span {
+  color: var(--color-primary-soft);
+}
+
+.progress-bar-track {
+  width: 100%;
+  height: 6px;
+  background: #27272e;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: var(--radius-full);
+  transition: width 0.3s ease;
+}
+
+/* Formulário de Adicionar Tarefa */
+.todo-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  width: 100%;
+}
+
+.todo-input {
+  flex: 1;
+  background: var(--bg-input);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.85rem;
+  color: #fff;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+  transition: border-color var(--transition-fast);
+}
+
+.todo-input:focus {
+  border-color: var(--color-primary);
+  background: #18181c;
+}
+
+.todo-input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Barra de Filtros */
+.todo-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.filter-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.filter-tab-btn:hover {
+  color: #fff;
+  background: #25252b;
+}
+
+.filter-tab-btn.active {
+  background: #272730;
+  color: #fff;
+  font-weight: 600;
+  border: 1px solid var(--border-medium);
+}
+
+.tab-count-badge {
+  background: #1c1c20;
+  font-size: 0.7rem;
+  padding: 0.1rem 0.35rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+}
+
+.filter-tab-btn.active .tab-count-badge {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/* Lista de Tarefas */
+.todo-items-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 0.85rem;
+  transition: border-color var(--transition-fast);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.todo-item:hover {
+  border-color: var(--border-medium);
+}
+
+.todo-item.completed {
+  opacity: 0.7;
+  background: #151517;
+}
+
+/* Custom Checkbox */
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 2px solid var(--border-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+  background: transparent;
+}
+
+.custom-checkbox:hover {
+  border-color: var(--color-primary);
+}
+
+.todo-item.completed .custom-checkbox {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.custom-checkbox svg {
+  color: #fff;
+  opacity: 0;
+}
+
+.todo-item.completed .custom-checkbox svg {
+  opacity: 1;
+}
+
+/* Conteúdo da Tarefa */
+.todo-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  overflow: hidden;
+}
+
+.todo-text {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  word-break: break-word;
+  line-height: 1.4;
+}
+
+.todo-item.completed .todo-text {
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.todo-meta {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+/* Botão Remover */
+.todo-delete-btn {
+  color: var(--text-muted);
+  padding: 0.35rem;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition-fast);
+}
+
+.todo-delete-btn:hover {
+  color: var(--color-primary);
+}
+
+/* Empty State */
+.todo-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2.5rem 1rem;
+  color: var(--text-muted);
+  gap: 0.5rem;
+}
+
+.empty-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.empty-desc {
+  font-size: 0.825rem;
+  max-width: 320px;
+  line-height: 1.45;
+}
+
+@media (max-width: 480px) {
+  .todo-card-wrapper {
+    padding: 1.15rem 0.85rem;
+  }
+  .todo-form {
+    flex-direction: column;
+  }
+  .todo-form .btn {
+    width: 100%;
+  }
+}
