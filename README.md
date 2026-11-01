@@ -119,7 +119,7 @@ A aplicação é **independente de dependências externas** (sem necessidade de 
 ### Opção 1: Execução Direta (Recomendada)
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/SEU-USUARIO/alura-labs.git
+   git clone https://github.com/Alan0o0/alura-labs.git
    ```
 2. Abra a pasta do projeto e dê um **duplo clique** no arquivo `index.html`.
 3. Pronto! Ele abrirá diretamente no seu navegador padrão.
